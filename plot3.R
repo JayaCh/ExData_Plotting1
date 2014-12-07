@@ -12,11 +12,11 @@ data <- data[data$Date == "1/2/2007" | data$Date == "2/2/2007", ]
 data <- data.frame(DateTime=strptime(paste(data$Date, data$Time), format="%d/%m/%Y %H:%M:%S"), data)
 
 #Copy the current plot to the png file
-png(file = "plot3.png", bg = "transparent")
+png(file = "plot3.png", height = 480, width = 480)
 
 #Plot with the DateTime and sub metering lines
 plot(data$DateTime, data$Sub_metering_1, 
-     type = "l", col = "black"
+     type = "l", col = "black",
      xlab= "", ylab = "Energy sub metering" )
 lines(data$DateTime, data$Sub_metering_2, col = "red")
 lines(data$DateTime, data$Sub_metering_3, col = "blue")

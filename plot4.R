@@ -12,7 +12,7 @@ data <- data[data$Date == "1/2/2007" | data$Date == "2/2/2007", ]
 data <- data.frame(DateTime=strptime(paste(data$Date, data$Time), format="%d/%m/%Y %H:%M:%S"), data)
 
 #Copy the current plot to the png file
-png(file = "plot4.png", bg = "transparent")
+png(file = "plot4.png", height = 480, width = 480)
 
 par(mfrow = c(2, 2))
 

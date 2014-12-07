@@ -10,7 +10,7 @@ data <- read.table(dataFile,
 data<-data[data$Date == "1/2/2007" | data$Date == "2/2/2007", ]
 
 #Copy the current plot to the png file
-png(file = "plot1.png", bg = "transparent")
+png(file = "plot1.png", height = 480, width = 480)
 
 #Plot the histogram
 hist(data$Global_active_power, breaks = 12, col="red", 

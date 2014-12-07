@@ -12,10 +12,10 @@ data <- data[data$Date == "1/2/2007" | data$Date == "2/2/2007", ]
 data <- data.frame(DateTime=strptime(paste(data$Date, data$Time), format="%d/%m/%Y %H:%M:%S"), data)
 
 #Copy the current plot to the png file
-png(file = "plot2.png", bg = "transparent")
+png(file = "plot2.png", height = 480, width = 480)
 
 #Plot with the concatenated Date Time and Global Active Power
 plot(data$DateTime, data$Global_active_power, 
-     type = "l", 
+     type = "l", col = "black",
      xlab= "", ylab = "Global Active Power (kilowatts)" )
 dev.off()
